@@ -52,7 +52,7 @@ LIMIT 20;
 │ python           │                  147500 │             8842 │
 └──────────────────┴─────────────────────────┴──────────────────┘
   20 rows                                             3 columns
-*\
+*/
 
 /*
 -- Takeaways & insights.
@@ -68,7 +68,7 @@ LIMIT 20;
 - Git appears in 1,602 postings, while GitHub appears in 532. Git is therefore the broader market requirement, although GitHub is associated with the highest median salary in this analysis.
 - Redis, GraphQL, scikit-learn, FastAPI, DynamoDB, and Cassandra show comparatively low demand. These technologies may provide specialization value but are less suitable as first-priority learning targets.
 - From a skill-development perspective, SQL, AWS, Spark, Airflow, Git, and Terraform provide the strongest balance between compensation and market demand. GitHub, MongoDB, Tableau, and Ansible may serve as valuable complementary skills.
-*\
+*/
 
 /*
 -- Output from updated DB.
@@ -98,4 +98,4 @@ LIMIT 20;
 │ sql              │                  147500 │             8039 │
 └──────────────────┴─────────────────────────┴──────────────────┘
   20 rows                                             3 columns
-*\
+*/

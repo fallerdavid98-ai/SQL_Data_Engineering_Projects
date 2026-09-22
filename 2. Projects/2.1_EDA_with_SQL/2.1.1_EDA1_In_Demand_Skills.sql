@@ -51,7 +51,7 @@ LIMIT 10;
 │ scala            │             1854 │
 └──────────────────┴──────────────────┘
   10 rows                   2 columns
-*\
+*/
 
 /*
 -- Takeaways & insights.
@@ -65,7 +65,7 @@ LIMIT 10;
 - Databricks appears 2,100 times, indicating strong demand for integrated platforms that combine cloud infrastructure, Spark-based processing, data engineering, and analytics.
 - Overall, the results describe a typical data engineering stack: Python and SQL as the foundation, Azure or AWS for infrastructure, Spark and Databricks for data processing, and Kafka and Airflow for streaming and orchestration.
 - A reasonable learning priority would be: Python and SQL first, followed by one major cloud platform, then Spark and Airflow, and finally Kafka, Databricks, and JVM languages depending on the target role.
-*\
+*/
 
 /*
 -- Output from updated DB.
@@ -85,4 +85,4 @@ LIMIT 10;
 │ snowflake        │             1907 │
 └──────────────────┴──────────────────┘
   10 rows                   2 columns
-*\
+*/

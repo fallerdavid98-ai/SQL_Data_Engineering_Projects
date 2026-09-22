@@ -51,7 +51,7 @@ LIMIT 20;
 │ docker           │                   89100 │                7 │                0.17 │
 └──────────────────┴─────────────────────────┴──────────────────┴─────────────────────┘
   20 rows                                                                   4 columns
-*\
+*/
 
 /*
 -- Takeaways & insights.
@@ -68,7 +68,7 @@ LIMIT 20;
 - BigQuery also scores 0.24 despite appearing in only five postings. Its higher median salary compensates for its lower frequency, illustrating how the score balances demand and compensation.
 - Docker ranks last among the top 20, with a median salary of 89,100 and an optimal skill score of 0.17. It may remain a useful supporting technology, but the available results do not identify it as a primary salary differentiator.
 - A practical learning sequence based on the ranking would be: SQL and Python first; Spark and one major cloud platform second; followed by Airflow and Databricks; and finally Kafka, Terraform, cloud warehouses, and JVM-based technologies according to the target role.
-* \
+*/
 
 /*
 -- Output from updated DB.
@@ -98,4 +98,4 @@ LIMIT 20;
 │ java             │                   98283 │               11 │                0.24 │
 └──────────────────┴─────────────────────────┴──────────────────┴─────────────────────┘
   20 rows                                                                   4 columns
-*\
+*/
