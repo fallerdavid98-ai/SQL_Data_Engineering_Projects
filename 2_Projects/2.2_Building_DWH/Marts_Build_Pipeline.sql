@@ -22,3 +22,9 @@
 
 -- Final call of Marts_Build_Piipeline script
 -- duckdb dw_marts.duckdb -c ".read Marts_Build_Pipeline.sql"
+
+-- Alternative to build DWH in MotherDuck
+-- 1) CLI --> duckdb md:
+-- 2) DuckDB --> CREATE DATABASE dw_marts;
+-- 3) DuckDB --> .exit
+-- 4) CLI --> duckdb md:dw_marts ".read Marts_Build_Pipeline.sql"
