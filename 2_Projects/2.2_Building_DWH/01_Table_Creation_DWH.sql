@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS company_dim;
 
 -- Create company_dim table
 
-SELECT '== Loading company_dim Table ===' AS info;
+SELECT '== Creating company_dim Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS company_dim (
 company_id INTEGER PRIMARY KEY,
@@ -20,7 +20,7 @@ name VARCHAR
 
 -- Create skills_dim table
 
-SELECT '== Loading skills_dim Table ===' AS info;
+SELECT '== Creating skills_dim Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS skills_dim (
     skill_id INTEGER PRIMARY KEY,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS skills_dim (
 
 -- Create job_postings_fact table
 
-SELECT '== Loading job_postings_fact Table ===' AS info;
+SELECT '== Creating job_postings_fact Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS job_postings_fact (
     job_id INTEGER PRIMARY KEY,
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS job_postings_fact (
 
 -- Create skills_job_dim table
 
-SELECT '== Loading skills_job_dim Table ===' AS info;
+SELECT '== Creating skills_job_dim Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS skills_job_dim (
     skill_id INTEGER,
