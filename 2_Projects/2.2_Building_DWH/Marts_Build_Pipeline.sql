@@ -8,5 +8,8 @@
 -- 3) Create flat mart table in seperate schema
 .read 03_Flat_Mart_Creation_DWH.sql
 
+-- 4) Create dimensional skills demand mart in seperate schema
+.read 04_Skills_Mart_Creation_DWH.sql
+
 -- Final call of Marts_Build_Piipeline script
 -- duckdb dw_marts.duckdb -c ".read Marts_Build_Pipeline.sql"
