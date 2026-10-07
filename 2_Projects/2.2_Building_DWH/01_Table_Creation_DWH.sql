@@ -1,7 +1,6 @@
 -- 1) Create star schema tables in DWH
 
 -- Drop all tables if they already exist
-
 SELECT '== Dropping Existing DWH Tables ===' AS info;
 
 DROP TABLE IF EXISTS skills_job_dim;
@@ -10,7 +9,6 @@ DROP TABLE IF EXISTS skills_dim;
 DROP TABLE IF EXISTS company_dim;
 
 -- Create company_dim table
-
 SELECT '== Creating company_dim Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS company_dim (
@@ -19,7 +17,6 @@ name VARCHAR
 );
 
 -- Create skills_dim table
-
 SELECT '== Creating skills_dim Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS skills_dim (
@@ -29,7 +26,6 @@ CREATE TABLE IF NOT EXISTS skills_dim (
 );
 
 -- Create job_postings_fact table
-
 SELECT '== Creating job_postings_fact Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS job_postings_fact (
@@ -52,7 +48,6 @@ CREATE TABLE IF NOT EXISTS job_postings_fact (
 );
 
 -- Create skills_job_dim table
-
 SELECT '== Creating skills_job_dim Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS skills_job_dim (

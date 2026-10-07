@@ -1,7 +1,6 @@
 -- 2) Load data from CSV files into DWH tables
 
 -- Load company dim table csv from Google object storage and insert into company_dim table
-
 SELECT '== Inserting Data Into company_dim Table ===' AS info;
 
 INSERT INTO company_dim (company_id,name)
@@ -12,7 +11,6 @@ FROM read_csv(
     );
 
 -- Load skills dim table csv from Google object storage and insert into skills_dim table
-
 SELECT '== Inserting Data Into skills_dim Table ===' AS info;
 
 INSERT INTO skills_dim (skill_id,skills,type)
@@ -23,7 +21,6 @@ FROM read_csv(
     );
 
 -- Load job postings fact table csv from Google object storage and insert into job_postings_fact table
-
 SELECT '== Inserting Data Into job_postings_fact Table ===' AS info;
 
 INSERT INTO job_postings_fact (
@@ -63,7 +60,6 @@ FROM read_csv(
     );
 
 -- Load skills job dim table csv from Google object storage and insert into skills_job_dim table
-
 SELECT '== Inserting Data Into skills_job_dim Table ===' AS info;
 
 INSERT INTO skills_job_dim (skill_id,job_id)
