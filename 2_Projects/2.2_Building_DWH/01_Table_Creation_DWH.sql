@@ -1,15 +1,36 @@
 -- 1) Create star schema tables in DWH
 
+-- Drop all tables if they already exist
+
+SELECT '== Dropping Existing DWH Tables ===' AS info;
+
+DROP TABLE IF EXISTS skills_job_dim;
+DROP TABLE IF EXISTS job_postings_fact;
+DROP TABLE IF EXISTS skills_dim;
+DROP TABLE IF EXISTS company_dim;
+
+-- Create company_dim table
+
+SELECT '== Loading company_dim Table ===' AS info;
+
 CREATE TABLE IF NOT EXISTS company_dim (
 company_id INTEGER PRIMARY KEY,
 name VARCHAR
 );
 
+-- Create skills_dim table
+
+SELECT '== Loading skills_dim Table ===' AS info;
+
 CREATE TABLE IF NOT EXISTS skills_dim (
     skill_id INTEGER PRIMARY KEY,
-    skill VARCHAR,
+    skills VARCHAR,
     type VARCHAR
 );
+
+-- Create job_postings_fact table
+
+SELECT '== Loading job_postings_fact Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS job_postings_fact (
     job_id INTEGER PRIMARY KEY,
@@ -29,6 +50,10 @@ CREATE TABLE IF NOT EXISTS job_postings_fact (
 
     FOREIGN KEY (company_id) REFERENCES company_dim(company_id)
 );
+
+-- Create skills_job_dim table
+
+SELECT '== Loading skills_job_dim Table ===' AS info;
 
 CREATE TABLE IF NOT EXISTS skills_job_dim (
     skill_id INTEGER,
