@@ -97,7 +97,7 @@ SELECT
     COUNT(*)
 FROM skills_job_dim;
 
---First Rows of each Table
+--First 5 Rows of each Table
 SELECT '=== Company Dimension Sample ===' AS info;
 SELECT * FROM company_dim LIMIT 5;
 
