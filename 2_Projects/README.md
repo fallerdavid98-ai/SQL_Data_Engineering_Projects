@@ -1,14 +1,15 @@
 # SQL Data Engineering Projects
 
-This directory contains hands-on projects through which I apply and extend core SQL and Data Engineering concepts. The portfolio is being developed progressively: completed projects are linked and documented in detail, while future projects are clearly marked as planned.
+This directory contains the completed portfolio projects in this repository. Each project links its business or engineering objective to inspectable SQL, architecture diagrams, execution guidance, and documented limitations.
 
 ## Project Overview
 
 | No. | Project | Status | Primary Focus |
 |---:|---|---|---|
-| 2.1 | [EDA with SQL](./2.1_EDA_with_SQL/) | Completed | SQL analytics, job-market insights, dimensional data model |
-| 2.2 | Data Warehouse | Planned | Data warehouse design and implementation |
-| 2.3 | Flat to DWH | Planned | Transformation of flat source data into a dimensional warehouse model |
+| 2.1 | [EDA with SQL](./2.1_EDA_with_SQL/) | Completed | SQL analytics, job-market insights, and transparent skill prioritization |
+| 2.2 | [Building a Data Warehouse](./2.2_Building_DWH/) | Completed | Warehouse creation, cloud CSV loading, analytical marts, validation, and snapshot synchronization |
+
+No Project 2.3 or Project 3 directory currently exists in this repository. Possible future additions are listed only as roadmap ideas below.
 
 ---
 
@@ -20,48 +21,65 @@ This directory contains hands-on projects through which I apply and extend core 
 
 This project analyzes the German job market for Data Engineers using DuckDB and a relational job-posting dataset. Three SQL analyses examine:
 
-1. the most in-demand skills,
-2. the skills associated with the highest median salaries, and
-3. the strongest balance between compensation and demand.
-
-The project includes a documented methodology, recruiter-oriented findings, and an optional dataset-refresh workflow for rebuilding the underlying star schema with newer job-posting data.
+1. the most in-demand skills;
+2. the skills associated with the highest median salaries; and
+3. the strongest observed balance between compensation and demand.
 
 **Skills demonstrated:**
 
 - multi-table joins across fact, dimension, and bridge tables
-- aggregation and top-N analysis with `GROUP BY`, `COUNT()`, `ORDER BY`, and `LIMIT`
-- median-based salary analysis
-- aggregated-result filtering with `HAVING`
+- aggregation, top-N analysis, and median-based salary analysis
 - calculated ranking metrics using `LN()` and `ROUND()`
-- methodological interpretation of missing values, sample sizes, and correlation limits
-- analytical documentation and reproducible project presentation
+- filtering aggregated results with `HAVING`
+- interpretation of missing values, sample sizes, and correlation limits
+- reproducible analytical documentation
 
 ---
 
-## 2.2 Data Warehouse
+## 2.2 Building a Data Warehouse and Data Marts
 
-**Status: Planned**
+[Open the complete project](./2.2_Building_DWH/)
 
-The local project directory has been prepared, but the project has not yet been implemented or published. A link and detailed technical description will be added once the first working version is available.
+![Project 2.2 pipeline architecture](../Images/1_2_Project2_Data_Pipeline.png)
 
----
+This project implements an ordered SQL pipeline from cloud-hosted CSV files to a normalized DuckDB warehouse and three analytical marts:
 
-## 2.3 Flat to DWH
+1. **Flat Mart** — one denormalized row per job posting with company information and nested skill structures;
+2. **Skills Mart** — monthly skill-demand measures by skill and standardized job title; and
+3. **Priority Mart** — a priority-role snapshot synchronized with the warehouse using `MERGE`.
 
-**Status: Planned**
+The pipeline includes schema creation, explicit source loading, dimensional transformations, row-count and sample validation, a controlled priority-role update scenario, and a master orchestration script.
 
-The local project directory has been prepared, but the project has not yet been implemented or published. The future project will focus on transforming flat source data into a structured dimensional warehouse model. A link and implementation details will be added after the project contains reviewable code and documentation.
+**Skills demonstrated:**
+
+- fact, dimension, and bridge-table modeling
+- remote CSV ingestion with DuckDB `read_csv`
+- CTAS and schema-specific mart creation
+- arrays and structs with `ARRAY_AGG` and `STRUCT_PACK`
+- monthly dimensions using `DATE_TRUNC` and `EXTRACT`
+- additive count measures and explicit fact-table grain
+- `MERGE`-based update, insert, and deletion logic
+- dependency-aware execution through DuckDB CLI `.read` commands
 
 ---
 
 ## Portfolio Approach
 
-Each completed project is intended to provide:
+Each completed project aims to provide:
 
-- a clearly defined analytical or engineering objective,
-- inspectable SQL and supporting implementation files,
-- documented design decisions and limitations,
-- reproducible outputs or validation steps, and
-- a concise README for technical reviewers and recruiters.
+- a clearly defined analytical or engineering objective;
+- inspectable SQL and supporting implementation files;
+- links between implementation code and architecture diagrams;
+- documented design decisions, validation steps, and limitations; and
+- a concise technical narrative suitable for review by recruiters and engineering teams.
 
-Only completed and publicly available work is presented as implemented. Planned projects remain explicitly labeled until their code and documentation are ready for review.
+Only completed and publicly available work is presented as implemented.
+
+## Optional Future Extensions
+
+The following items are ideas only and have no corresponding project directory or implementation yet:
+
+- **Project 3:** potential flat-source-to-warehouse build inspired by the course roadmap; and
+- additional marts or production controls such as scheduling, logging, automated tests, and monitoring.
+
+They will be added to the project table only after their implementation is available in the repository.
